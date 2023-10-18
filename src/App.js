@@ -35,7 +35,7 @@ function App() {
             <div className="showText flex flex-wrap p-5 gap-4 border relative top-[70%]    ml-11 font-bold ">
               <p className="text-6xl">20&deg;</p>
               <div>
-                <p className="   text-4xl w-[100%]">London</p>
+                <p className="text-4xl w-[100%]">London</p>
                 <p className="text-sm ">06.09- Monday, 9Sep'19 </p>
               </div>
               <div>
