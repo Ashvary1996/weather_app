@@ -3,6 +3,9 @@
 # dependencies
 .env
 
+.gitignore
+dummy.js
+
 /node_modules
 /.pnp
 .pnp.js
