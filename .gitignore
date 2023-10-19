@@ -2,9 +2,11 @@
 
 # dependencies
 .env
+env.js
+/public/env.js
+dummy.js
 
 .gitignore
-dummy.js
 
 /node_modules
 /.pnp
