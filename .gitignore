@@ -4,8 +4,7 @@
 .env
 env.js
 /public/env.js
-dummy.js
-
+ 
 .gitignore
 
 /node_modules

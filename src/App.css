@@ -1,8 +1,11 @@
 .App {
   text-align: center;
   background-image: url("https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  /* background-image: url("https://c4.wallpaperflare.com/wallpaper/134/37/127/seasons-spring-summer-winter-wallpaper-preview.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
+  /* height: fit-content; */
+  
 }
 
 .App-logo {
@@ -30,7 +33,41 @@
 .App-link {
   color: #61dafb;
 }
+/* ................./ */
+.cityNameDiv{
+  background-color: rgba(17, 17, 17, 0.521);
+  /* backdrop-filter: 10px; */
+}
+.cityAndLoacationDiv {
+  /* background-color: rgba(0, 0, 0, 0.295); */
+  /* backdrop-filter: 10px; */
+}
+ 
+.locationDiv {
+  background-color: rgba(36, 34, 34, 0.521);
+  backdrop-filter: 10px;
+  border-radius: 10px;
+  border: 2px solid white;
+  color: azure;
+  border-color: white;
+  
+}
+.forecastDiv {
+  background-color: rgba(17, 17, 17, 0.521);
+  backdrop-filter: 10px;
+  padding: 10px;
+  padding-bottom: 30px;
+  
+   
+}
+.forecastDayDiv >div {
+  background-color:rgba(77, 76, 76, 0.521);
+  /* backdrop-filter: 10px; */
+ 
+   
+}
 
+/* ................./ */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -38,5 +75,64 @@
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* ..................................... // */
+@media only screen and (min-width: 200px) and (max-width: 950px) {
+  .App{
+
+     
+    background-size: cover;
+    height: fit-content;
+    
+  }
+  .defaultDisp img{
+     width: 80%;
+  }
+  .cityAndLoacationDiv {
+    /* background-color: rgba(0, 128, 128, 0.347); */
+    display: flex;
+    flex-direction: column;
+    position: static;
+  }
+  .cityNameDiv {
+  }
+  .locationDiv {
+    position: static;
+  }
+  .forecastDiv {
+    width: 100%;
+    /* background-color: red; */
+  }
+}
+@media only screen and (min-width: 200px) and (max-width: 555px) {
+  .cityNameDiv p {
+    font-size: 15px;
+    width: fit-content;
+    /* margin-left: 10px; */
+  }
+  .ldiv {
+    text-align: center;
+    /* background-color: brown; */
+  }
+  .forecastDiv {
+    width: 100%;
+
+    /* background-color: red; */
+  }
+  .forecastDayDiv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    /* background-color: red; */
+  }
+  .forecastDayDiv p {
+    display: inline-block;
+    padding: 10px;
+    /* background: green; */
+
+    /* background-color: red; */
   }
 }
