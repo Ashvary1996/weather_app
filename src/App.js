@@ -10,33 +10,33 @@ function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
 
-  const handleOnSearchChange = (searchData) => {
-    // const [lat, long] = searchData.value.split(" ");
-    const [name] = searchData.label.split(" ");
-    console.log(name);
-    const currentWeatherFetch = fetch(
-      `${WEATHER_API_URL}/current.json?key=${WEATHER_API_KEY}&q=${name}&aqi=yes`
-    );
-    const forecastWeatherFetch = fetch(
-      `${WEATHER_API_URL}/forecast.json?key=${WEATHER_API_KEY}&q=${name}&aqi=yes&days=7`
-    );
+  const handleOnSearchChange = async (searchData) => {
+    const cityName = searchData.label.split(",")[0];
+    try {
+      const [currentWeatherResponse, forecastWeatherResponse] =
+        await Promise.all([
+          fetch(
+            `${WEATHER_API_URL}/current.json?key=${WEATHER_API_KEY}&q=${cityName}&aqi=yes`
+          ),
+          fetch(
+            `${WEATHER_API_URL}/forecast.json?key=${WEATHER_API_KEY}&q=${cityName}&aqi=yes&days=7`
+          ),
+        ]);
 
-    Promise.all([currentWeatherFetch, forecastWeatherFetch])
-      .then(async (response) => {
-        const weatherResponse = await response[0].json();
-        const forcastResponse = await response[1].json();
+      const currentWeatherData = await currentWeatherResponse.json();
+      const forecastData = await forecastWeatherResponse.json();
 
-        setCurrentWeather({ city: searchData.label, ...weatherResponse });
-        setForecast({ city: searchData.label, ...forcastResponse });
-      })
-      .catch((err) => console.log(err));
+      setCurrentWeather({ city: searchData.label, ...currentWeatherData });
+      setForecast({ city: searchData.label, ...forecastData });
+    } catch (error) {
+      console.error("Error fetching weather data:", error);
+    }
   };
-  // console.log(currentWeather);
-  // console.log(forecast);
+
   return (
-    <div className="App   p-5">
-      <h1 className="text-xl mb-2">Weather-App</h1>
-      <div className="w-[50%] m-auto ">
+    <div className="App">
+      <h1 className="font-semibold mb-2">Weather-App</h1>
+      <div className="searchContainer ">
         <Search onSearchChange={handleOnSearchChange} />
       </div>
       {!currentWeather && <DefaultDisplay />}

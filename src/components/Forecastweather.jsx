@@ -1,7 +1,6 @@
 import React from "react";
 
-function Forecastweather({ data }) {
-  // console.log("forecastWeather=>>>", data);
+function ForecastWeather({ data }) {
   const WEEK_DAYS = [
     "Sunday",
     "Monday",
@@ -12,38 +11,52 @@ function Forecastweather({ data }) {
     "Saturday",
   ];
   const dayInAWeek = new Date().getDay();
-  const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(
+  const forecastDays = WEEK_DAYS.slice(dayInAWeek).concat(
     WEEK_DAYS.slice(0, dayInAWeek)
   );
 
   return (
-    <div className=" forecastDiv    w-[70%]">
-      <h1>Weather-Forecast</h1>
-      <div className=" forecastDayDiv flex   justify-around m-auto ">
-        {data.forecast.forecastday.map((day, i) => (
-          <div key={i} className="flex-col border w-fit pr-3 pl-3 mt-2 rounded  ">
-            <img
-              src={day.day.condition.icon}
-              className=" m-auto "
-              alt="weather"
-            />
-            <p className="day">{forecastDays[i]}</p>
-            <p className="description">{day.day.condition.text}</p>
-            <p className="day">{day.date}</p>
-            <p className="min-max">
-              {Math.round(day.day.mintemp_c)}°C /{" "}
-              {Math.round(day.day.maxtemp_c)}
-              °C
-            </p>
-            <p>Vision: {day.day.avgvis_km} km</p>
-            <p>Humidity: {day.day.avghumidity}</p>
-            <p>UV: {day.day.uv}</p>
-            <p>Sunrise: {day.astro.sunrise} </p>
-            <p>Sunset: {day.astro.sunset} </p>
-          </div>
-        ))}
+    <div className="forecastDiv w-[70%] m-auto">
+      <div>
+        <h1 className="text-2xl font-semibold mb-4">Weather Forecast</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {data.forecast.forecastday.map((day, i) => (
+            <div key={i} className="border rounded p-4">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-lg font-semibold">{forecastDays[i]}</p>
+                <img
+                  src={day.day.condition.icon}
+                  className="w-12 h-12"
+                  alt="weather"
+                />
+              </div>
+              <p className="text-xl text-neutral-300 ">
+                {day.day.condition.text}
+              </p>
+              <p className="text-xs text-neutral-300">{day.date}</p>
+              <div className="flex justify-between mt-2">
+                <p className="text-xs">
+                  Min Temp: {Math.round(day.day.mintemp_c)}°C
+                </p>
+                <p className="text-xs">
+                  Max Temp: {Math.round(day.day.maxtemp_c)}°C
+                </p>
+              </div>
+              <div className="flex justify-between mt-2">
+                <p className="text-xs">Visibility: {day.day.avgvis_km} km</p>
+                <p className="text-xs">Humidity: {day.day.avghumidity}</p>
+              </div>
+              <div className="flex justify-between mt-2">
+                <p className="text-xs">UV Index: {day.day.uv}</p>
+                <p className="text-xs">Sunrise: {day.astro.sunrise}</p>
+              </div>
+              <p className="text-xs">Sunset: {day.astro.sunset}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
-export default Forecastweather;
+
+export default ForecastWeather;

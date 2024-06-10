@@ -1,138 +1,142 @@
-.App {
-  text-align: center;
+body {
   background-image: url("https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-  /* background-image: url("https://c4.wallpaperflare.com/wallpaper/134/37/127/seasons-spring-summer-winter-wallpaper-preview.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
-  /* height: fit-content; */
-  
+
+  background-position: center top;
+  background-attachment: fixed;
+  text-align: center;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(51, 50, 50, 0.895);
+  color: whitesmoke;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cityNameDiv {
+  background-color: rgba(17, 17, 17, 0.6);
+  border-radius: 10px;
+  padding: 10px;
+  padding-left: 10%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cityAndLocationDiv {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-/* ................./ */
-.cityNameDiv{
-  background-color: rgba(17, 17, 17, 0.521);
-  /* backdrop-filter: 10px; */
-}
-.cityAndLoacationDiv {
-  /* background-color: rgba(0, 0, 0, 0.295); */
-  /* backdrop-filter: 10px; */
-}
- 
 .locationDiv {
-  background-color: rgba(36, 34, 34, 0.521);
-  backdrop-filter: 10px;
+  background-color: rgba(36, 34, 34, 0.499);
+  backdrop-filter: blur(10px);
   border-radius: 10px;
-  border: 2px solid white;
+  border: 1px solid rgba(144, 134, 134, 0.816);
   color: azure;
-  border-color: white;
-  
+  /* padding: 10px; */
+  /* margin-top: 20px; */
 }
+
 .forecastDiv {
-  background-color: rgba(17, 17, 17, 0.521);
-  backdrop-filter: 10px;
+  background-color: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
   padding: 10px;
-  padding-bottom: 30px;
-  
-   
-}
-.forecastDayDiv >div {
-  background-color:rgba(77, 76, 76, 0.521);
-  /* backdrop-filter: 10px; */
- 
-   
+  margin-top: 20px;
+  position: relative;
 }
 
-/* ................./ */
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.forecastDayDiv > div {
+  background-color: rgba(77, 76, 76, 0.6);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  /* width: 50vw; */
 }
 
-/* ..................................... // */
 @media only screen and (min-width: 200px) and (max-width: 950px) {
-  .App{
-
-     
+  .App {
     background-size: cover;
     height: fit-content;
-    
   }
-  .defaultDisp img{
-     width: 80%;
+
+  .defaultDisp img {
+    width: 80%;
   }
-  .cityAndLoacationDiv {
-    /* background-color: rgba(0, 128, 128, 0.347); */
-    display: flex;
-    flex-direction: column;
+
+  .cityAndLocationDiv {
     position: static;
   }
-  .cityNameDiv {
-  }
+
   .locationDiv {
     position: static;
   }
+
   .forecastDiv {
     width: 100%;
-    /* background-color: red; */
   }
 }
+
 @media only screen and (min-width: 200px) and (max-width: 555px) {
   .cityNameDiv p {
     font-size: 15px;
     width: fit-content;
-    /* margin-left: 10px; */
   }
+
   .ldiv {
     text-align: center;
-    /* background-color: brown; */
   }
+
   .forecastDiv {
     width: 100%;
-
-    /* background-color: red; */
   }
+
   .forecastDayDiv {
     display: flex;
     flex-direction: column;
     width: 100%;
-
-    /* background-color: red; */
   }
+
   .forecastDayDiv p {
     display: inline-block;
     padding: 10px;
-    /* background: green; */
+  }
+}
+.cityAndLocationDiv {
+  display: flex;
+  justify-content: space-between;
+}
 
+@media only screen and (min-width: 950px) and (max-width: 1550px) {
+  .cityAndLocationDiv {
     /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+  }
+
+  .cityNameDiv {
+    flex: 2;
+    /* background-color: green; */
+  }
+  .locationDiv {
+    flex: 1.5;
+    height: fit-content;
+    /* background-color: green; */
+  }
+
+  .forecastDiv {
+    width: 100%;
+    /* background-color: blue; */
+  }
+  .forecastDayDiv > div {
+    background-color: rgba(51, 51, 51, 0.518);
+    width: 30%;
   }
 }
