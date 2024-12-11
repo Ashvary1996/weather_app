@@ -2,7 +2,6 @@ body {
   background-image: url("https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-repeat: no-repeat;
   background-size: cover;
-
   background-position: center top;
   background-attachment: fixed;
   text-align: center;
@@ -12,131 +11,40 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(51, 50, 50, 0.895);
   color: whitesmoke;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  /* Overlay effect for better readability */
+  background-color: rgba(0, 0, 0, 0.7);
 }
-
-.cityNameDiv {
-  background-color: rgba(17, 17, 17, 0.6);
-  border-radius: 10px;
-  padding: 10px;
-  padding-left: 10%;
-}
-
-.cityAndLocationDiv {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
+/* .mainDiv{
+    border: 1px solid white;
+    border-radius: 10px;
+} */
+.weatherInfo,
 .locationDiv {
-  background-color: rgba(36, 34, 34, 0.499);
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   border-radius: 10px;
-  border: 1px solid rgba(144, 134, 134, 0.816);
-  color: azure;
-  /* padding: 10px; */
-  /* margin-top: 20px; */
+  padding: 20px;
+  margin: 10px auto;
+  color: whitesmoke;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
 }
 
-.forecastDiv {
-  background-color: rgba(17, 17, 17, 0.6);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  padding: 10px;
-  margin-top: 20px;
-  position: relative;
+h1,
+h2 {
+  color: #f5f5f5; /* Lighter text for headings */
+  text-shadow: 2px 2px 4px rgba(105, 62, 27, 0.7); /* Subtle text shadow */
 }
 
-.forecastDayDiv > div {
-  background-color: rgba(77, 76, 76, 0.6);
-  border-radius: 10px;
-  padding: 10px;
-  margin-top: 10px;
-  /* width: 50vw; */
+p {
+  font-size: 14px;
+  line-height: 1.5;
 }
 
-@media only screen and (min-width: 200px) and (max-width: 950px) {
-  .App {
-    background-size: cover;
-    height: fit-content;
-  }
-
-  .defaultDisp img {
-    width: 80%;
-  }
-
-  .cityAndLocationDiv {
-    position: static;
-  }
-
-  .locationDiv {
-    position: static;
-  }
-
-  .forecastDiv {
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 200px) and (max-width: 555px) {
-  .cityNameDiv p {
-    font-size: 15px;
-    width: fit-content;
-  }
-
-  .ldiv {
-    text-align: center;
-  }
-
-  .forecastDiv {
-    width: 100%;
-  }
-
-  .forecastDayDiv {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .forecastDayDiv p {
-    display: inline-block;
-    padding: 10px;
-  }
-}
-.cityAndLocationDiv {
-  display: flex;
-  justify-content: space-between;
-}
-
-@media only screen and (min-width: 950px) and (max-width: 1550px) {
-  .cityAndLocationDiv {
-    /* background-color: red; */
-    display: flex;
-    flex-direction: row;
-  }
-
-  .cityNameDiv {
-    flex: 2;
-    /* background-color: green; */
-  }
-  .locationDiv {
-    flex: 1.5;
-    height: fit-content;
-    /* background-color: green; */
-  }
-
-  .forecastDiv {
-    width: 100%;
-    /* background-color: blue; */
-  }
-  .forecastDayDiv > div {
-    background-color: rgba(51, 51, 51, 0.518);
-    width: 30%;
-  }
+img {
+  max-width: 100%;
+  border-radius: 10px; /* Smooth edges for images */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle depth */
 }

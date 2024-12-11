@@ -5,7 +5,8 @@ Welcome to the Weather App! This application allows you to check the current wea
 ## Features
 
 - **Current Weather**: View the current weather conditions for a selected city, including temperature, weather icon, and description.
-- **Weather Forecast**: Get a 7-day weather forecast for a selected city, including minimum and maximum temperatures, visibility, humidity, UV index, sunrise, and sunset times.
+- **Weather Forecast**: Display a 6-day weather forecast for the chosen city, featuring hourly minimum and maximum temperatures.
+- **Geolocation Integration**: Automatically detect your location to provide real-time weather updates for your current city.
 
 ## Technologies Used
 
@@ -27,12 +28,11 @@ To run the Weather App locally on your machine, follow these steps:
 
 1. Upon launching the app, you will see a search bar.
 2. Enter the name of the city you want to check the weather for.
-3. Select the desired city from the dropdown list.
-4. View the current weather and forecast displayed on the screen.
+3. View the current weather and forecast displayed on the screen.
 
 ## Landing Page
 
-![Screenshot 1](/src/weatherImg.png)
+![Screenshot 1](/src/assets/weatherApp.png)
 
 ## Live Demo
 

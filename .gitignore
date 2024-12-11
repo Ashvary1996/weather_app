@@ -27,3 +27,7 @@ env.js
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/archieved
+./archieved
+archieved
