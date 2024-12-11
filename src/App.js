@@ -7,6 +7,7 @@ import WeatherForecast from "./components/WeatherForecast";
 function App() {
   const [data, setData] = useState(null);
   const [input, setInput] = useState("");
+  
   // console.log(data);
 
   const fetchWeatherData = useCallback(
@@ -18,7 +19,7 @@ function App() {
           lat && lon ? `lat=${lat}&lon=${lon}` : `q=${input}`;
 
         const response = await fetch(
-          `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API_KEY_CITY}&q=${weatherApiQuery}&aqi=yes`
+          `https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API_KEY_CITY}&q=${weatherApiQuery}&aqi=yes`
         );
 
         const responseforForecast = await fetch(
@@ -88,7 +89,9 @@ function App() {
         setData(transformedCityData);
       } catch (error) {
         console.error("Error fetching weather data:", error);
-        alert("City not found or invalid data! Try: city, country (e.g.= Delhi,India).");
+        alert(
+          "City not found or invalid data! Try: city, country (e.g.= Delhi,India)."
+        );
       }
     },
     [input]
@@ -108,7 +111,6 @@ function App() {
           },
           (error) => {
             console.error("Error fetching geolocation:", error);
-            
           }
         );
       } else {
