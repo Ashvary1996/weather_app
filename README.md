@@ -5,7 +5,7 @@ Welcome to the Weather App! This application allows you to check the current wea
 ## Features
 
 - **Current Weather**: View the current weather conditions for a selected city, including temperature, weather icon, and description.
-- **Weather Forecast**: Display a 6-day weather forecast for the chosen city, featuring hourly minimum and maximum temperatures.
+- **Weather Forecast**: Display a 3-day weather forecast for the chosen city, featuring hourly temperatures.
 - **Geolocation Integration**: Automatically detect your location to provide real-time weather updates for your current city.
 
 ## Technologies Used
